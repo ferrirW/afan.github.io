@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://ferrirw.github.io/"/>
+  <link href="https://ferrirw.github.io/"/>
   <updated>2018-10-02T11:55:34.769Z</updated>
-  <id>http://ferrirw.github.io/</id>
+  <id>https://ferrirw.github.io/</id>
   
   <author>
     <name>ferrir</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://ferrirw.github.io/2018/10/02/hello-world/"/>
-    <id>http://ferrirw.github.io/2018/10/02/hello-world/</id>
+    <link href="https://ferrirw.github.io/2018/10/02/hello-world/"/>
+    <id>https://ferrirw.github.io/2018/10/02/hello-world/</id>
     <published>2018-10-02T11:55:34.768Z</published>
     <updated>2018-10-02T11:55:34.769Z</updated>
     
