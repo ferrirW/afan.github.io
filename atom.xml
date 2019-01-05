@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ferrirw.github.io/"/>
-  <updated>2018-10-02T16:43:08.734Z</updated>
+  <updated>2019-01-05T12:40:48.433Z</updated>
   <id>https://ferrirw.github.io/</id>
   
   <author>
@@ -17,10 +17,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>VIM 指令</title>
+    <link href="https://ferrirw.github.io/2019/01/05/vim-manu/"/>
+    <id>https://ferrirw.github.io/2019/01/05/vim-manu/</id>
+    <published>2019-01-05T12:29:30.000Z</published>
+    <updated>2019-01-05T12:40:48.433Z</updated>
+    
+    <content type="html"><![CDATA[<p>VIM指令是linux入门必学的知识啦，回想发现和流氓高手里的猥琐秘籍很像哈哈，都讲究一个润物细无声，刚开始的时候可能老是忘记，但是坚持用下去就会越来越熟练了，总之就是多用就会啦，嘻嘻。</p><a id="more"></a><h3 id="忘记你我做不到"><a href="#忘记你我做不到" class="headerlink" title="忘记你我做不到"></a>忘记你我做不到</h3><blockquote><ul><li>i→ 插入模式. 按ESC键返回普通模式</li><li>x→ 删除光标所在的字符</li><li>:wq→ 保存退出(:w 保存，:q 退出)</li><li>dd→ 删除(拷贝)当前行</li><li>p→ 粘贴</li></ul></blockquote><h3 id="河东狮吼"><a href="#河东狮吼" class="headerlink" title="河东狮吼"></a>河东狮吼</h3><ol><li>插入模式变种</li></ol><blockquote><ul><li>a→ 在光标后插入</li><li>o→ 在当前行之后插入新行</li><li>O→ 在当前行之前插入新行</li><li>cw→ 替换从光标到单词结束</li></ul></blockquote><ol start="2"><li>移动命令</li></ol><blockquote><ul><li>0→ 跳到第一列</li><li>^→ 跳到本行第一个非空字符</li><li>$→ 跳到本行末尾</li><li>g_→ 跳到本行最后一个非空字符</li><li>/pattern→ 搜索pattern</li></ul></blockquote><ol start="3"><li>复制/粘贴</li></ol><blockquote><ul><li>P→ 在当前位置之<strong>前</strong>粘贴，记住 p 是在当前位置之<strong>后</strong>粘贴.</li><li>yy→ 复制当前行，与dd和P命令相比更简单。</li></ul></blockquote><ol start="4"><li>撤销/恢复撤销</li></ol><blockquote><ul><li>u→ 撤销</li><li><c-r>→ 恢复</c-r></li></ul></blockquote><ol start="5"><li>加载/保存/退出/修改 文件(缓存)</li></ol><blockquote><ul><li>:e &lt;文件路径&gt;→ 打开</li><li>:w→ 保存</li><li>:saveas &lt;文件路径&gt;→ 保存到这个文件</li><li>:x,ZZ或者:wq→ 保存和退出 (:x 如果可能的话，只保存)</li><li>:q!→ 退出但不保存，使用:qa!，即使在缓存中还有已经修改的也会退出。</li><li>:bn(对比:bp) → 显示下一个(上一个)文件缓存</li></ul></blockquote><h3 id="单恋一枝花"><a href="#单恋一枝花" class="headerlink" title="单恋一枝花"></a>单恋一枝花</h3><blockquote><ul><li>. (点)会重做最后一个命令,</li><li>N&lt;命令&gt;  会重做这个命令N次.</li></ul></blockquote><p>例子</p><blockquote><p> 2dd → 会删除2行<br>3p → 会粘贴文本3次<br>100idesu [ESC] → 会写入“desu” 100次<br>. → 在最后一个命令之后会在此写入100个”desu”.<br>3.→ 会写入3个“desu”(并不是300个).</p></blockquote><h3 id="迷宫"><a href="#迷宫" class="headerlink" title="迷宫"></a>迷宫</h3><blockquote><ul><li>NG→ 跳到第N行</li><li>gg→ 是1G的快捷方式 - 跳到文件的开始</li><li>G→ 跳到最后一行</li></ul></blockquote><blockquote><ul><li>w→ 跳到下一个单词的开头</li><li>e→ 跳到这个单词的末尾</li><li>默认单词是有字母和下划线组成。大写字符就是由空格分隔的，使用大写字符的效果:</li></ul></blockquote><p><img src="https://static.oschina.net/uploads/img/201308/19135039_AdpL.jpg" alt="示例"></p><blockquote><ul><li>高效率移动</li><li>% → 跳到对应的(,)处</li><li>*(#) → 跳到当前光标的下一个(上一个) 相同单词的地方</li></ul></blockquote><h3 id="过火"><a href="#过火" class="headerlink" title="过火"></a>过火</h3><p>大多数命令(y,d,v,gU,gu)使用下面这种通用格式：</p><p>&lt;开始位置&gt;&lt;命令&gt;&lt;结束位置&gt;</p><blockquote><p>0y$意味着：</p><ul><li>0→ 跳到本行开头</li><li>y→ 从这里开始复制</li><li>$→ 直到本行结束</li></ul></blockquote><blockquote><p>ye 意味着：</p><ul><li>从当前位置复制到单词的末尾</li></ul></blockquote><blockquote><p>y2/foo 意思是：</p><ul><li>一直复制到第二个foo出现的地方</li></ul></blockquote><h3 id="错位"><a href="#错位" class="headerlink" title="错位"></a>错位</h3><blockquote><ul><li>fa→ 跳到这行a字母的下一个出现的地方。（对比 ; ）会查找下一个（上一个）地方</li><li>tb→ 跳到b字符的前一个字符.</li><li>3fa→ 在这行中查找a出现的第三个位置.</li><li>F 和 T→ 与f和t相似， 但是方向相反.</li><li><strong>dt+a→删除光标与a之前的所有字符 (好用)</strong></li></ul></blockquote><p><img src="https://static.oschina.net/uploads/img/201308/19135039_vFzT.jpg" alt="移动示例"></p><h3 id="有一种爱叫做放手"><a href="#有一种爱叫做放手" class="headerlink" title="有一种爱叫做放手"></a>有一种爱叫做放手</h3><ol><li>区域选择：&lt;命令&gt;a&lt;对象&gt; 和 &lt;命令&gt;i&lt;对象&gt; 命令可以是d,y,v</li></ol><p>对于下文：<br><img src="https://static.oschina.net/uploads/img/201308/19135040_FZZt.png" alt="map"></p><blockquote><ul><li>vi”→ 将会选择 foo</li><li>va”→ 将会选择 “foo”</li><li>vi)→ 将会选择 “foo”</li><li>va)→ 将会选择 (“foo”)</li><li>v2i)→ 将会选择 map (+) (“foo”)</li><li>v2a)→ 将会选择 (map (+) (“foo”))</li></ul></blockquote><ol start="2"><li>矩形选择块</li></ol><p>列选择</p><blockquote><ul><li>^ → 将光标定位到这行第一个非空格字符</li><li><ctrl-v> → 选择开始位置</ctrl-v></li><li><ctrl-d> → 向下移动 (也可使用 jjj 或者 % ， 其他…)</ctrl-d></li><li>I## [ESC] → 用 ## 来注释每一行</li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;VIM指令是linux入门必学的知识啦，回想发现和流氓高手里的猥琐秘籍很像哈哈，都讲究一个润物细无声，刚开始的时候可能老是忘记，但是坚持用下去就会越来越熟练了，总之就是多用就会啦，嘻嘻。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>为什么现在开始写博客</title>
-    <link href="https://ferrirw.github.io/2018/10/02/why-start-blog/"/>
-    <id>https://ferrirw.github.io/2018/10/02/why-start-blog/</id>
-    <published>2018-10-02T11:55:34.768Z</published>
+    <link href="https://ferrirw.github.io/2019/01/05/why-start-blog/"/>
+    <id>https://ferrirw.github.io/2019/01/05/why-start-blog/</id>
+    <published>2019-01-05T12:22:50.768Z</published>
     <updated>2018-10-02T16:43:08.734Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要写博客呢，作为一个超级爱记录的人，以前的做法是将生活中的事写微博，学习到的新知识记有道笔记。然而，上个星期突然发现，之前找工作总结的笔记内容现在看已经完全没有印象了，微博又是一个时间黑洞，二者都没有发挥我期望的作用。所以，趁着“国庆七天乐”，花了一点时间折腾起了一个博客啦，目的也很明确：更深刻和持续的思考、更有效的内容输出以及更纯粹的生活记录，如果能在以上目标都能达到的同时，对其他人有一点点启发和帮助，对我来说也是很棒的事情。</p><a id="more"></a><h2 id="不要高估自己的记忆力"><a href="#不要高估自己的记忆力" class="headerlink" title="不要高估自己的记忆力"></a>不要高估自己的记忆力</h2><p>记得很早就看过刘未鹏老师的《暗时间》和“为什么你应该（从现在开始就）写博客”，有一句话记忆深刻，“写博客有很多的好处，但是没有任何明显的坏处”，还是非常认同的，但是一直没有动手写，一个原因是懒，一个是对自己的记忆有自信，然而。。。现实总会在你最自信的时候piapia打脸的。工作两个月来也认识到，往往以为掌握到的知识，如果没有有效的输出，很快就会忘记，千万千万不要高估自己的记忆力。</p><h2 id="保证主线的进展"><a href="#保证主线的进展" class="headerlink" title="保证主线的进展"></a>保证主线的进展</h2><p>以前规划的时候会把每天的事情排序，到什么时间做什么事情就好，但是最近渐渐发现，工作和生活上的事情越来越多，突发事件会不停的打断之前的安排，那么一个更有效的聚焦和记录工具来保证主线任务的进展就显得非常必要了。</p><h2 id="学到能教别人的地步"><a href="#学到能教别人的地步" class="headerlink" title="学到能教别人的地步"></a>学到能教别人的地步</h2><p>在公司梳理项目代码的时候总结了3篇wiki，对后来理解项目起了很重要的作用，就算如此，我以为整个项目的轮廓都在脑海里了，然而在给同事讲解的时候，那些没有搞清楚的脉络往往都会被提出来，这件事给我非常大的启发：教一些完全不会或者有一些基础的人，是很好的知识输出的途径，因为输出内容的正确性会不断被听众质疑，这就意味着在讲解之前，讲者必须反复思考整个知识图谱，把“认为是正确”的内容确认再确认，不然就会面临一个尴尬的场景：被听众问住。</p><p>这里也立个小flag，在动手写每篇blog之前，都要把内容吃透，遇到直觉上“认为是正确”但没有完整逻辑思考的问题，一定要刨根问底。</p><h2 id="持续学习和思考"><a href="#持续学习和思考" class="headerlink" title="持续学习和思考"></a>持续学习和思考</h2><p>坚持坚持坚持，重要的事情说三遍！</p>]]></content>
